@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  streamlit:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/app/src
+    ports:
+      - "8000:8000"
+    user: nonroot
+    environment:
+      PATH: /app/.venv/bin:$PATH
